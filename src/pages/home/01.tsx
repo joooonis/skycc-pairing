@@ -16,6 +16,10 @@ export default function Home() {
         className="flex-col space-y-2 h-full justify-between items-center p-4 w-full bg-slate-100 rounded-sm"
         onSubmit={handleSubmit(onSubmit)}
       >
+        <h1>
+          대기중인 경기에 참여하거나 <br />
+          새로운 경기를 만들어보세요!
+        </h1>
         <div className="flex-col items-center">
           <label className="mr-2 text-xs">동아리 이름</label>
           <input
