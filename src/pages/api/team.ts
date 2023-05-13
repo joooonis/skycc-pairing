@@ -6,21 +6,7 @@ async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseType>,
 ) {
-  if (req.method === 'POST') {
-    const {
-      body: { team, name },
-    } = req;
-    const newTeam = await client.team.create({
-      data: {
-        team,
-        name,
-      },
-    });
-    res.json({
-      ok: true,
-      team: newTeam,
-    });
-  }
+  res.status(200).json({ ok: true });
 }
 export default withHandler({
   methods: ['POST'],

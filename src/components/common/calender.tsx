@@ -12,6 +12,12 @@ export default function Calender({ isEditable = true }) {
   const dispatch = useAppDispatch();
   const playState = useAppSelector((state) => state.play);
 
+  const [plays, setPlays] = useState([]); // [
+  const data = fetch('/api/play').then((res) => res.json());
+  useEffect(() => {
+    data.then((res) => setPlays(res));
+  }, []);
+
   useEffect(() => {
     const firstDay = new Date(year, month, 1);
     const lastDay = new Date(year, month + 1, 0);

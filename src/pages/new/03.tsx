@@ -1,5 +1,5 @@
 import Layout from '@components/common/layout';
-import { useAppDispatch, useAppSelector } from '@features/hooks';
+import { useAppDispatch } from '@features/hooks';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { setMemberCount } from '@features/play/playSlice';
@@ -13,9 +13,6 @@ export default function New() {
   const [player, setPlayer] = useState<number>(0);
   const router = useRouter();
   const dispach = useAppDispatch();
-  const playState = useAppSelector((state) => state.play);
-  const teamState = useAppSelector((state) => state.team);
-  console.log(teamState, playState);
 
   useEffect(() => {
     dispach(setMemberCount(player));

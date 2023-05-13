@@ -1,6 +1,7 @@
 import Calender from '@components/common/calender';
 import Layout from '@components/common/layout';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 interface Team {
@@ -11,6 +12,7 @@ interface Team {
 
 export default function Home() {
   const { register, handleSubmit } = useForm<Team>();
+
   const router = useRouter();
   const onSubmit = (data: Team) => console.log(data);
   return (

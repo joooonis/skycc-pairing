@@ -16,6 +16,7 @@ model Team {
   id              Int         @id @default(autoincrement())
   team           String     @unique
   name           String     @unique
+  phone          String     @unique
   createdAt       DateTime    @default(now())
   updatedAt       DateTime    @updatedAt
   Plays          Play[]
