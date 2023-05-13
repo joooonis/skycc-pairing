@@ -64,10 +64,10 @@ export default function Calender() {
   return (
     <div className="w-full flex flex-col items-center bg-orange-50 p-4 rounded-md">
       <div className="flex w-full justify-between items-center">
-        <span className="text-primary-green-3">
+        <span className="text-sm">
           {year}년 {month + 1}월
         </span>
-        <div className="text-primary-green-3 cursor-pointer flex">
+        <div className="text-sm cursor-pointer flex">
           <svg
             onClick={prevMonth}
             xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ export default function Calender() {
           </svg>
         </div>
       </div>
-      <div className="grid grid-cols-7 gap-3 w-full mt-2 text-h3 p-4 rounded-lg text-primary-green-3 bg-secondary-orange-3">
+      <div className="grid grid-cols-7 gap-3 w-full mt-2 text-h3 p-4 rounded-lg text-sm bg-secondary-orange-3">
         {['일', '월', '화', '수', '목', '금', '토'].map((day, index) => (
           <div
             className="py-[2px] rounded-full flex items-center justify-center"
