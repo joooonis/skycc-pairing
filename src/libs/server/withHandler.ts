@@ -13,11 +13,7 @@ interface ConfigType {
   isPrivate?: boolean;
 }
 
-export default function withHandler({
-  methods,
-  handler,
-  isPrivate = true,
-}: ConfigType) {
+export default function withHandler({ methods, handler }: ConfigType) {
   return async function (
     req: NextApiRequest,
     res: NextApiResponse,
@@ -25,10 +21,6 @@ export default function withHandler({
     if (req.method && !methods.includes(req.method as any)) {
       // as any : 'undefined' 형식은 'method' 형식에 할당할 수 없습니다.
       return res.status(405).end();
-    }
-    // private한 api요청이고 로그인 한 유저가 아니라면
-    if (isPrivate && !req.session.user) {
-      return res.status(401).json({ ok: false, error: 'plz log in.' });
     }
     try {
       await handler(req, res);

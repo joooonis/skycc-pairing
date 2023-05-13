@@ -1,4 +1,5 @@
 import Layout from '@components/common/layout';
+import { useAppSelector } from '@features/hooks';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 
@@ -10,6 +11,9 @@ interface Team {
 
 export default function New() {
   const { register, handleSubmit } = useForm<Team>();
+  const playState = useAppSelector((state) => state.play);
+  const teamState = useAppSelector((state) => state.team);
+
   const router = useRouter();
   return (
     <Layout>
