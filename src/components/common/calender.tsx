@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { formatDate } from '@utils/calender';
 import { useAppDispatch, useAppSelector } from '@features/hooks';
+import { setDate as setPlayDate } from '@features/play/playSlice';
 
-export default function Calender() {
+export default function Calender({ isEditable = true }) {
   const [date, setDate] = useState(new Date());
   const [month, setMonth] = useState(date.getMonth());
   const [year, setYear] = useState(date.getFullYear());
@@ -56,9 +57,13 @@ export default function Calender() {
   };
 
   const handleWeekDayClick = (index: number) => {
+    if (!isEditable) return;
     const newChosenDays = [...chosenDays].map(() => false);
     newChosenDays[index] = !newChosenDays[index];
     setChosenDays(newChosenDays);
+    const choosenDay = formatDate(year, month, days[index]);
+
+    dispatch(setPlayDate(choosenDay));
   };
 
   return (

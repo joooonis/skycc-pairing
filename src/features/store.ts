@@ -3,7 +3,7 @@ import playSlice from './play/playSlice';
 import teamSlice from './team/teamSlice';
 
 const rootReducer = combineReducers({
-  user: teamSlice,
+  team: teamSlice,
   play: playSlice,
 });
 

@@ -5,6 +5,7 @@ const formatMonth = (month: number) =>
 
 const formatDate = (year: number, month: number, day: number) =>
   year + '-' + formatMonth(month) + '-' + formatDay(day);
+
 const TIMEZONE = [
   '00:00',
   '00:30',

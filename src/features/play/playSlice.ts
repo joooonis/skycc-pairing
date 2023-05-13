@@ -2,6 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: Play = {
   date: '',
+  time: '',
+  memberCount: 0,
 };
 
 const playSlice = createSlice({
@@ -12,8 +14,16 @@ const playSlice = createSlice({
       ...state,
       date: action.payload,
     }),
+    setTime: (state, action) => ({
+      ...state,
+      time: action.payload,
+    }),
+    setMemberCount: (state, action) => ({
+      ...state,
+      memberCount: action.payload,
+    }),
   },
 });
 
-export const { setDate } = playSlice.actions;
+export const { setDate, setTime, setMemberCount } = playSlice.actions;
 export default playSlice.reducer;

@@ -1,18 +1,21 @@
-import Calender from '@components/common/calender';
 import Layout from '@components/common/layout';
+import { useAppDispatch } from '@features/hooks';
+import { setTime } from '@features/play/playSlice';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 
-interface Team {
-  name: string;
-  team: string;
-  phone: string;
-}
-
 export default function New() {
-  const { register, handleSubmit } = useForm<Team>();
+  const { register, handleSubmit } = useForm<Play>();
   const router = useRouter();
-  const onSubmit = (data: Team) => console.log(data);
+  const dispach = useAppDispatch();
+
+  const onSubmit = (data: Play) => {
+    const { time } = data;
+    dispach(setTime(time));
+    router.push({
+      pathname: '/new/03',
+    });
+  };
   return (
     <Layout>
       <form
@@ -27,6 +30,7 @@ export default function New() {
         </div>
         <div className="flex-col mt-4 items-center">
           <input
+            {...register('time')}
             type="time"
             className="border text-xs border-gray-300 rounded-md w-full px-4 py-2 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-transparent"
           />
@@ -34,7 +38,7 @@ export default function New() {
 
         <div className="flex-col items-center">
           <button
-            onClick={() => router.push('/new/03')}
+            // onClick={() => router.push('/new/03')}
             className="mt-4 bg-amber-500 text-xs hover:bg-amber-600 w-full text-white font-medium py-2 px-4 rounded"
           >
             다음

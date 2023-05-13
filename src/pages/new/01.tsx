@@ -12,13 +12,10 @@ interface Team {
 export default function New() {
   const { register, handleSubmit } = useForm<Team>();
   const router = useRouter();
-  const onSubmit = (data: Team) => console.log(data);
+
   return (
     <Layout>
-      <form
-        className="flex-col space-y-2 h-full justify-between items-center p-4 w-full bg-slate-100 rounded-sm"
-        onSubmit={handleSubmit(onSubmit)}
-      >
+      <div className="flex-col space-y-2 h-full justify-between items-center p-4 w-full bg-slate-100 rounded-sm">
         <h1 className="my-8">가능한 날을 선택해주세요. </h1>
         <div className="flex-col items-center">
           <Calender />
@@ -32,7 +29,7 @@ export default function New() {
             다음
           </button>
         </div>
-      </form>
+      </div>
     </Layout>
   );
 }

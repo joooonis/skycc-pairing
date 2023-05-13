@@ -24,7 +24,7 @@ export default function Home() {
           새로운 경기를 만들어보세요!
         </h1>
         <div className="flex-col items-center">
-          <Calender />
+          <Calender isEditable={false} />
         </div>
 
         <div className="flex-col items-center">

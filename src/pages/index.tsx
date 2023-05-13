@@ -1,4 +1,6 @@
 import Layout from '@components/common/layout';
+import { useAppDispatch } from '@features/hooks';
+import { setName, setPhone, setTeam } from '@features/team/teamSlice';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 
@@ -11,7 +13,12 @@ interface Team {
 export default function Home() {
   const { register, handleSubmit } = useForm<Team>();
   const router = useRouter();
+  const dispach = useAppDispatch();
   const onSubmit = (data: Team) => {
+    const { name, team, phone } = data;
+    dispach(setName(name));
+    dispach(setTeam(team));
+    dispach(setPhone(phone));
     router.push({
       pathname: '/home',
     });
