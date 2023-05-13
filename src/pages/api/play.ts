@@ -23,6 +23,7 @@ async function handler(
           date: '2023-05-15',
           memberCount: 6,
           team: '연승',
+          school: '연세대학교',
         },
         {
           id: 3,
@@ -30,6 +31,7 @@ async function handler(
           date: '2023-05-16',
           memberCount: 5,
           team: '고대짱짱맨',
+          school: '고려대학교',
         },
         {
           id: 4,
@@ -37,6 +39,7 @@ async function handler(
           date: '2023-05-16',
           memberCount: 5,
           team: '서장훈',
+          school: '서울대학교',
         },
       ],
     });
