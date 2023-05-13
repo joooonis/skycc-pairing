@@ -1,0 +1,3 @@
+interface Play {
+  date: string;
+}

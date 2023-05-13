@@ -1,8 +1,10 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import playSlice from './play/playSlice';
 import teamSlice from './team/teamSlice';
 
 const rootReducer = combineReducers({
   user: teamSlice,
+  play: playSlice,
 });
 
 const store = configureStore({

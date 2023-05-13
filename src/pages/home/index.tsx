@@ -1,3 +1,4 @@
+import Calender from '@components/common/calender';
 import Layout from '@components/common/layout';
 import { useForm } from 'react-hook-form';
 
@@ -21,12 +22,7 @@ export default function Home() {
           새로운 경기를 만들어보세요!
         </h1>
         <div className="flex-col items-center">
-          <label className="mr-2 text-xs">동아리 이름</label>
-          <input
-            {...register('name')}
-            type="text"
-            className="border text-xs mt-2 h-9 w-full border-gy-300 rounded-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-transparent"
-          ></input>
+          <Calender />
         </div>
         <div className="flex-col items-center">
           <label className="mr-2 text-xs">이름</label>
