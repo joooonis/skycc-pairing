@@ -45,7 +45,7 @@ export default function New() {
         </div>
         <div className="flex-col items-center">
           <button
-            onClick={() => router.push('/new/03')}
+            onClick={() => router.push('/new/04')}
             className="mt-4 bg-amber-500 text-xs hover:bg-amber-600 w-full text-white font-medium py-2 px-4 rounded"
           >
             다음
